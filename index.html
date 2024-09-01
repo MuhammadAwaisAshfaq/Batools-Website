@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Batool</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to bottom, pink, orange);
+            transition: background 1s ease;
+        }
+
+        .container {
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        button {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        button img {
+            width: 50px;
+            height: 50px;
+        }
+
+        p {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="message">Hello, Batool!</h1>
+        <button onclick="changeMessageAndColor()">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Red_heart.svg/1024px-Red_heart.svg.png" alt="Heart">
+        </button>
+        <p>Tap the heart to feel the love</p>
+    </div>
+
+    <script>
+        function changeMessageAndColor() {
+            const messages = [
+                "You're the love of my life, Batool.",
+                "Every moment with you is magic, Batool.",
+                "You complete me, Batool.",
+                "I cherish every second with you, Batool.",
+                "You're my everything, Batool."
+            ];
+
+            const gradients = [
+                'linear-gradient(to bottom, blue, purple)',
+                'linear-gradient(to bottom, pink, yellow)',
+                'linear-gradient(to bottom, red, orange)',
+                'linear-gradient(to bottom, green, teal)',
+                'linear-gradient(to bottom, indigo, pink)'
+            ];
+
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            const randomGradient = gradients[Math.floor(Math.random() * gradients.length)];
+
+            document.getElementById('message').textContent = randomMessage;
+            document.body.style.background = randomGradient;
+        }
+    </script>
+</body>
+</html>
